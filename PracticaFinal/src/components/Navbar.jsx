@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 function Navbar() {
   return (
+    
     <nav className="nav">
       <Link to="/home" className="nav-link">Home</Link>
       <Link to="/login" className="nav-link">Iniciar Sesión</Link>
