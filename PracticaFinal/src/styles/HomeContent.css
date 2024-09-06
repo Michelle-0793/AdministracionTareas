@@ -1,0 +1,19 @@
+body{
+    margin: 0;
+    background-color: rgb(44, 44, 44);
+}
+
+h2{
+    margin-top: 70px;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    color: rgb(194, 228, 1);
+    font-size: 40px;
+    text-align: center;
+
+}
+.textHome{
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    color: white;
+
+    text-align: center;
+  }
