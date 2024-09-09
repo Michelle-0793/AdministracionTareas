@@ -3,7 +3,7 @@ import React from "react";
 import { useEffect, useState } from 'react';
 import GetUsers from "../services/GetUsers";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../styles/FormLogin.css";
 
 
@@ -75,7 +75,7 @@ function FormLogin() {
         <form className="form">
 
         <div className="datosForm">
-        <input className="inputDatos" type="text" id="username"  name="username" placeholder="Ingrese un nombre de Usuario"
+        <input className="inputDatos" type="text" id="username"  name="username" placeholder="Usuario"
         
           value={username}
           onChange={cargaUsuario}
@@ -87,8 +87,7 @@ function FormLogin() {
         <br /><br />
 
         <div className="datosForm">
-        <label className="textDatos" htmlFor="email">Contraseña</label><br />
-          <input className="inputDatos" type="password" id="contraseña" name="contraseña" placeholder="Ingrese una contraseña"
+          <input className="inputDatos" type="password" id="contraseña" name="contraseña" placeholder="Contraseña"
           value={password}
           onChange={cargaContra}
           required
@@ -98,13 +97,16 @@ function FormLogin() {
         <br /><br />
 
         <button type="submit" className="btnIniciarSesion" onClick={(IniciarSesion)}>Iniciar Sesión</button>
-        <p className="Registrarse">¿No tienes una cuenta? Registrate </p>
+        <p className="Registrarse"> ¿No tienes una cuenta?{""}
+        <Link to="/register" className="registrarse-link"> Regístrese</Link>
+        </p>
 
       </form>
       <div></div>
       <div className="Banner">
-        <h1 className="TituloBanner">BIENVENID@ <br /> </h1>
-        <p className="TextoBanner">Gracias por estar aquí</p>
+        <h1 className="TituloBanner">TaskMaster<br /> </h1>
+        <p className="TextoBanner">La herramienta perfecta  <br />  para crear, 
+        organizar y gestionar  <br /> sus tareas de manera eficiente</p>
       </div>
 
 </div>

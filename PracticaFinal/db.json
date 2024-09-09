@@ -5,20 +5,20 @@
       "username": "Mich0710",
       "email": "mich.lpez07@gmail.com",
       "password": "1234"
+    },
+    {
+      "id": "2b19",
+      "username": "Cat67",
+      "email": "cat.com",
+      "password": "1234"
+    },
+    {
+      "id": "2b79",
+      "username": "Pe256",
+      "email": "pe.com",
+      "password": "1234"
     }
   ],
   "tareas": [
-    {
-      "id": "e021",
-      "text": "Vectoriza"
-    },
-    {
-      "id": "ff19",
-      "text": "Estilizar"
-    },
-    {
-      "id": "b30a",
-      "text": "Diseñar"
-    }
   ]
 }

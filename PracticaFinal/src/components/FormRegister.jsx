@@ -66,10 +66,10 @@ function FormRegister() {
         icon: "success",
         title: "Usuario registrado con éxito",
         showConfirmButton: false,
-        timer: 1200
+        timer: 1500
     });
 
-        navigate("/login");  //Redirigir al login tras el cierre de la alerta
+        navigate("/");  //Redirigir al login tras el cierre de la alerta
 
     });
   }
@@ -88,34 +88,37 @@ function FormRegister() {
     return(
         <form className="form">
 
-        <div className="datosForm">
-        <label className="textDatos" htmlFor="username">Usuario</label><br />
-        <input className="inputDatos" type="text" id="username" name="username" placeholder="Ingrese un nombre de Usuario"
+         <div className="datosForm">
+        <input className="inputDatos" type="text" id="username"  name="username" placeholder="Usuario"
           value={username}
           onChange={cargaUsuario}
           required
         />
+        <i className="fa-solid fa-user"></i>
         </div>
+
         <br /><br />
         <div className="datosForm">
-          <label className="textDatos" htmlFor="email">Email</label><br />
           <input className="inputDatos" type="text" id="email" name="email" placeholder="Ingrese su email"
           value={email}
           onChange={cargaEmail}
-          required 
+          required
         />
+        <i className="fa-solid fa-user"></i>
         </div>
         <br /><br />
+
         <div className="datosForm">
-        <label className="textDatos" htmlFor="email">Contraseña</label><br />
-          <input className="inputDatos" type="text" id="contraseña" name="contraseña" placeholder="Ingrese una contraseña"
+          <input className="inputDatos" type="password" id="contraseña" name="contraseña" placeholder="Contraseña"
           value={password}
           onChange={cargaContra}
-         required
+          required
         />
+        <i className="fa-solid fa-user"></i>
         </div>
         <br /><br />
-        <button type="submit" className="button" onClick={(cargar)}>Registrarse</button>
+
+        <button type="submit" className="btnRegistrarse" onClick={(cargar)}>Registrarse</button>
 
         {/*<button type="submit" className="button" onClick={(cargar) => navigate("/Login")}>Registrarse</button>*/}
         {/*<p>{saludo}</p>-para que salga el texto en el pantalla*/}
