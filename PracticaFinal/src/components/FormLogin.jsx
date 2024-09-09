@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import GetUsers from "../services/GetUsers";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
-import "../styles/FormRegister.css"
+import "../styles/FormLogin.css";
 
 
 //HOOK
@@ -71,16 +71,19 @@ function FormLogin() {
   console.log(users)
 
     return(
+<div className="wrapper">
         <form className="form">
 
         <div className="datosForm">
-        <label className="textDatos" htmlFor="username">Usuario</label><br />
-        <input className="inputDatos" type="text" id="username" name="username" placeholder="Ingrese un nombre de Usuario"
+        <input className="inputDatos" type="text" id="username"  name="username" placeholder="Ingrese un nombre de Usuario"
+        
           value={username}
           onChange={cargaUsuario}
           required
         />
+        <i className="fa-solid fa-user"></i>
         </div>
+
         <br /><br />
 
         <div className="datosForm">
@@ -90,12 +93,21 @@ function FormLogin() {
           onChange={cargaContra}
           required
         />
+        <i className="fa-solid fa-user"></i>
         </div>
         <br /><br />
 
-        <button type="submit" className="button" onClick={(IniciarSesion)}>Iniciar Sesión</button>
+        <button type="submit" className="btnIniciarSesion" onClick={(IniciarSesion)}>Iniciar Sesión</button>
+        <p className="Registrarse">¿No tienes una cuenta? Registrate </p>
 
       </form>
+      <div></div>
+      <div className="Banner">
+        <h1 className="TituloBanner">BIENVENID@ <br /> </h1>
+        <p className="TextoBanner">Gracias por estar aquí</p>
+      </div>
+
+</div>
     )
 }
 

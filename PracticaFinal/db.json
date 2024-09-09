@@ -7,5 +7,18 @@
       "password": "1234"
     }
   ],
-  "tareas": []
+  "tareas": [
+    {
+      "id": "e021",
+      "text": "Vectoriza"
+    },
+    {
+      "id": "ff19",
+      "text": "Estilizar"
+    },
+    {
+      "id": "b30a",
+      "text": "Diseñar"
+    }
+  ]
 }
