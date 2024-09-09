@@ -85,7 +85,7 @@ function FormLogin() {
 
         <div className="datosForm">
         <label className="textDatos" htmlFor="email">Contraseña</label><br />
-          <input className="inputDatos" type="text" id="contraseña" name="contraseña" placeholder="Ingrese una contraseña"
+          <input className="inputDatos" type="password" id="contraseña" name="contraseña" placeholder="Ingrese una contraseña"
           value={password}
           onChange={cargaContra}
           required
