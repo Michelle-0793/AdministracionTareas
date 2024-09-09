@@ -19,7 +19,7 @@ function ListaTareas() {
     setTareaEditada(event.target.value);
   };
 
-
+//AÑADIR TAREA
   const AñadirTarea = () => { //Función flecha para añadir
     if (NuevaTarea.trim() !== "") { // Agregar verificación de espacio vacío
       const nuevaTarea = { id: Date.now(), text: NuevaTarea }; //Date.now identificador unico, en tiempo
@@ -29,6 +29,7 @@ function ListaTareas() {
     }
   };
 
+  //EDITAR Y ELIMINA TAREAS
   const EditarTarea = (tarea) => {
     setEditarTarea(tarea.id);
     setTareaEditada(tarea.text);
@@ -42,7 +43,7 @@ function ListaTareas() {
     setTareas(nuevasTareas); // Actualizamos el estado con las tareas filtradas
   };
   
-
+//GUARDAR LO EDITADO
   const GuardarEdicion = async (id) => {
     const Editada = { id, text: TareaEditada };
     await UpdateTareas(Editada);
@@ -60,33 +61,36 @@ function ListaTareas() {
     fetchTareas(); 
   }, []); 
 
+
+
+
   return (
-    <div>
-      <h1>Lista de Tareas</h1>
-      <input type="text" value={NuevaTarea} onChange={CambiarValorInput} />
-      <button onClick={AñadirTarea}>Agregar Tarea</button>
+<div>
+  <h1>Lista de Tareas</h1>
+  <input type="text" value={NuevaTarea} onChange={CambiarValorInput} />
+  <button onClick={AñadirTarea}>Agregar Tarea</button>
 
 {/*LISTA DE TAREAS*/}
     <ul>
       {Tareas.map((tarea) => (
         <li key={tarea.id}> {/*se mapea y se crea el li para cada tarea*/}
           {EditaTarea === tarea.id ? (
-            <>
-            <input type="text" /*Input pata editar la tarea*/ 
-              value={TareaEditada}
-              onChange={CambiarTextoEditado}/>
-              
-              <button onClick={() => GuardarEdicion(tarea.id)}>Guardar</button>
-            </>
-          ) : (
-            <>
-             {/* Si la tarea no está en modo edición, se va a mostrar el texto de la tarea */}
-              {tarea.text}
-              <button onClick={() => EditarTarea(tarea)}>Editar</button>
+      <>
+      <input type="text" /*Input pata editar la tarea*/ 
+        value={TareaEditada}
+        onChange={CambiarTextoEditado}/>
+        
+        <button onClick={() => GuardarEdicion(tarea.id)}>Guardar</button>
+      </>
+    ) : (
+      <>
+        {/* Si la tarea no está en modo edición, se va a mostrar el texto de la tarea */}
+        {tarea.text}
+        <button onClick={() => EditarTarea(tarea)}>Editar</button>
 
-               {/* Botón para eliminar la tarea */}
-              <button onClick={() => EliminarTarea(tarea.id)}>Eliminar</button>
-            </>
+          {/* Botón para eliminar la tarea */}
+        <button onClick={() => EliminarTarea(tarea.id)}>Eliminar</button>
+      </>
           )}
         </li>
       ))}
