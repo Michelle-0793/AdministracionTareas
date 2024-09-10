@@ -26,7 +26,7 @@ function FormLogin() {
 
 
   //ESTA FUNCION PUEDE CARGAR, HACER POST O BIEN REALIZAR VALIDACIONES
-  const IniciarSesion = () => {
+  const IniciarSesion = (event) => {
     event.preventDefault(); //Prevenir el comportamiento por defecto del formulario
     // Validar que todos los campos estén llenos
     if (!username || !password) {
@@ -56,7 +56,7 @@ function FormLogin() {
       showConfirmButton: false,
       timer: 1000
   });
-        navigate("/home");  //Redirigir al home 
+        navigate("/Home");  //Redirigir al home 
   }
 };
 

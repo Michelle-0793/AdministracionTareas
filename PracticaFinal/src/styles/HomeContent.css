@@ -1,25 +1,112 @@
-body{
+body {
     margin: 0;
     padding: 0;
 }
 
-.Gestion{
+.Gestion {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     color: rgb(255, 255, 255);
     font-size: 40px;
     text-align: center;
+    margin-top: 100px; /* Ajusta el margen superior si es necesario */
 }
-.InputTarea{
-    border-radius: 50px;
-    border: transparent;
-    background-color: rgba(255, 255, 255);
-    color: #061a3e;
-    width: 300px;
-    height: 20px;
-    padding: 5px;
-    text-align: center;
-    margin-top: 10px;
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-    font-size: 14px;
 
+.InputsDatos {
+    text-align: center;
+}
+
+.InputTarea, .InputFecha {
+    border: none;
+    font-size: 18px;
+    text-align: center;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    height: auto;
+    margin: 0;
+    outline: 0;
+    padding: 15px;
+    width: 600px;
+    background-color: #ffffff59;
+    color: #ffffff;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5) inset;
+    margin-bottom: 30px;
+    border-radius: 50px;
+}
+.InputTarea2, .InputFecha2{
+    border: none;
+    font-size: 18px;
+    text-align: center;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    height: auto;
+    margin: 0;
+    outline: 0;
+    padding: 15px;
+    width: 300px;
+    background-color: #ffffff59;
+    color: #ffffff;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5) inset;
+    margin-bottom: 30px;
+    border-radius: 50px;
+}
+
+.InputTarea::placeholder {
+    color: #ffffff;
+    opacity: 1; /* Corrige la opacidad del placeholder */
+    font-size: 18px;
+    text-align: center;
+}
+
+.FechaEntrega {
+    font-size: 18px;
+    text-align: center;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    color: #9fdfbb;
+    font-weight: bold;
+}
+
+.btnAñadirTarea {
+    border: none;
+    outline: none;
+    width: 200px;
+    height: 40px;
+    margin-top: -20px;
+    font-size: 20px;
+    border-radius: 40px;
+    cursor: pointer;
+    background: #2ee57d;
+    color: white;
+    margin-left: 430px;
+}
+
+/* Estilos para el contenedor de tareas */
+.ContenedorTareas {
+
+    padding: 20px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados opcionales */
+    margin: 0 auto; /* Centrar el contenedor horizontalmente */
+    width: 100%; /* Ancho máximo para el contenedor */
+}
+
+ul {
+    list-style: none; /* Elimina los puntos de lista por defecto */
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px; /* Espaciado entre elementos de la lista */
+}
+.btnTareas{
+    border: none;
+    outline: none;
+    width: 90px;
+    height: 40px;
+    margin-top: -20px;
+    font-size: 16px;
+    border-radius: 40px;
+    cursor: pointer;
+    background: #2ee57d36;
+    color: white;
+    margin-left: 20px;
+}
+.divListaTareas{
+    text-align: center;
 }

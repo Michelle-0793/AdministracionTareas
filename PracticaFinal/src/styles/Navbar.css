@@ -1,32 +1,34 @@
-body{
+body {
     margin: 0;
     padding: 0;
 }
 
 .nav {
-    margin: 0;
-    margin-top: -250px;
     display: flex;
-    justify-content: center; /* Centra horizontalmente todos los elementos */
-    justify-content: space-between;
-    align-items: center; /* Centra verticalmente todos los elementos */
-    height: 40px; /* Fijamos una altura específica */
-    width: 100%; /* Asegura que ocupe el ancho completo */
+    justify-content: space-between; /* Distribuye el espacio entre los elementos */
+    align-items: center; /* Centra verticalmente */
+    height: 60px; /* Altura fija */
+    width: 60%; /* Ancho del navbar, ajusta según sea necesario */
+    position: fixed; /* Fija el navbar en la parte superior */
+    top: 0; /* Coloca el navbar en la parte superior */
+    left: 50%; /* Mueve el contenedor al centro horizontal */
+    transform: translateX(-50%); /* Ajusta la posición para centrarlo */
+    z-index: 1000; /* Asegura que el navbar esté por encima de otros elementos */
+    margin-top: 50px;
 }
 
 .nav-link {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 40px; /* Coincide con la altura de la navbar */
-    width: 180px; /* Fijamos el ancho de los enlaces */
+    height: 60px; /* Coincide con la altura del navbar */
+    width: 180px; /* Ancho fijo para los enlaces */
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     font-size: 16px;
     text-decoration: none;
     color: #2ee57d;
     font-weight: bold;
     transition: 0.5s all ease;
-    
 }
 
 .nav-link.active,
@@ -37,16 +39,15 @@ body{
 }
 
 .nav-linkCerrarSesión {
-    display: flex; /* Aseguramos que use flexbox para alineación */
-    justify-content: center; /* Centra el contenido horizontalmente */
-    align-items: center; /* Centra el contenido verticalmente */
-    height: 40px; /* Coincide con la altura de la navbar y los enlaces */
-    width: 180px; /* Fijamos el ancho para que coincida con los enlaces */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px; /* Coincide con la altura del navbar y los enlaces */
+    width: 180px; /* Ancho fijo para el botón */
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     font-size: 16px;
     font-weight: bold;
     border-radius: 40px;
-    letter-spacing: 1px;
     cursor: pointer;
     background: linear-gradient(to right, #2ee57d, #061a3e);
     color: white;
@@ -58,4 +59,9 @@ body{
 .nav-linkCerrarSesión:hover {
     background: linear-gradient(to right, #061a3e, #2ee57d);
     color: white;
+}
+
+/* Asegúrate de que el contenido principal no quede oculto detrás del navbar */
+.contenido {
+    margin-top: 6cqb; /* Ajusta esto para que coincida con la altura de tu navbar */
 }

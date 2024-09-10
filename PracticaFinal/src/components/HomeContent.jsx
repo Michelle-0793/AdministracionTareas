@@ -20,7 +20,7 @@ function ListaTareas() {
   };
 
   const CambiarTextoEditado = (event) => {
-    setTareaEditada(event.target.value);
+    setTareaEditada(event.target.value); // Cambia 'El texto editado' cuando el input de edición se usa
   };
 
   const CambiarFecha = (event) => {
@@ -81,45 +81,44 @@ function ListaTareas() {
   }, []);  
 
 return (
-<div>
-
+<div className='content-container'>
   <h1 className='Gestion'>Gestión de Tareas</h1><br /><br />
-  <input className='InputTarea' type="text" value={NuevaTarea} onChange={CambiarValorInput} placeholder='Ingrese una tarea' />
-  <input className='InputFecha' type="date" value={FechaTarea} onChange={CambiarFecha} />
-  <button onClick={AñadirTarea}>Agregar Tarea</button>
+  <div className='InputsDatos'>
+    <input className='InputTarea' type="text" value={NuevaTarea} onChange={CambiarValorInput} placeholder='Ingrese una tarea' /><br />
+    <label className='FechaEntrega' htmlFor="fecha">Fecha de entrega:</label><br /><br />
+    <input className='InputFecha' type="date" value={FechaTarea} onChange={CambiarFecha} /> <br /><br />
+    <button className='btnAñadirTarea' onClick={AñadirTarea}>Añadir tarea</button>
+  </div>
+  <br /><br /><br />
 
-{/*LISTA DE TAREAS*/}
-    <ul>
-      {Tareas.map((tarea) => (
-        <li key={tarea.id}> {/*se mapea y se crea el li para cada tarea*/}
-          {EditaTarea === tarea.id ? ( //Ternario para ver si la tarea está o no en edición
-     <>
-     {/* Inputs para editar la tarea y la fecha */}
-     <input type="text" value={TareaEditada} onChange={CambiarTextoEditado} 
-     />
-     <input type="date" value={FechaEditada} onChange={CambiarFechaEditada} 
-     />
-        <button onClick={() => GuardarEdicion(tarea.id)}>Guardar</button>
-      </>
-    ) : ( //Para cerrrar el operador ternario
+{/* LISTA DE TAREAS */}
+<div className='ContenedorTareas'>
+<div>
+  <ul>
+    {Tareas.map((tarea) => (
+      <li key={tarea.id}> {/*li para añadir cada tarea*/}
+        {EditaTarea === tarea.id ? ( //Abre operador ternario, en lugar de else if (entra al estado de edición)
+          <>
+            <input className='InputTarea2' type="text" value={TareaEditada} onChange={CambiarTextoEditado} /> 
+            <input className='InputFecha2' type="date" value={FechaEditada} onChange={CambiarFechaEditada} /><br />
+            <button className='btnTareas' onClick={() => GuardarEdicion(tarea.id)}>Guardar</button>
+          </>
+        ) : ( //Cierre de operador ternario (sale del estado de edición)
+          <>
+          <div className='divListaTareas'>
+            {tarea.text} - <span>{tarea.fecha}</span>
+            <button className='btnTareas' onClick={() => EditarTarea(tarea)}>Editar</button>
+            <button className='btnTareas' onClick={() => EliminarTarea(tarea.id)}>Eliminar</button>
+          </div>
+          </>
+        )}
+      </li>
+    ))}
+  </ul>
+</div>
+</div>{/*Termina el div de ContenedorTareas*/}
+</div> /*Termina el div de content-container*/
 
-      <>
-        {/* Si la tarea no está en modo edición, se va a mostrar el texto de la tarea */}
-        {/* Muestra el texto de la tarea y la fecha */}
-        {tarea.text} - <span>{tarea.fecha}</span>
-         {/* Botón para editar la tarea */}
-        <button onClick={() => EditarTarea(tarea)}>Editar</button>
-          {/* Botón para eliminar la tarea */}
-        <button onClick={() => EliminarTarea(tarea.id)}>Eliminar</button>
-      </>
-
-          )}
-        </li>
-
-      ))}
-    </ul>
-
-    </div>
   );
 }
 
