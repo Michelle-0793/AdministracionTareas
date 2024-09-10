@@ -1,19 +1,25 @@
 body{
     margin: 0;
-    background-color: rgb(44, 44, 44);
+    padding: 0;
 }
 
-h2{
-    margin-top: 70px;
+.Gestion{
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-    color: rgb(194, 228, 1);
+    color: rgb(255, 255, 255);
     font-size: 40px;
     text-align: center;
+}
+.InputTarea{
+    border-radius: 50px;
+    border: transparent;
+    background-color: rgba(255, 255, 255);
+    color: #061a3e;
+    width: 300px;
+    height: 20px;
+    padding: 5px;
+    text-align: center;
+    margin-top: 10px;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-size: 14px;
 
 }
-.textHome{
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-    color: white;
-
-    text-align: center;
-  }

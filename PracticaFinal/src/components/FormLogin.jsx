@@ -97,7 +97,7 @@ function FormLogin() {
         <br /><br />
 
         <button type="submit" className="btnIniciarSesion" onClick={(IniciarSesion)}>Iniciar Sesión</button>
-        <p className="Registrarse"> ¿No tienes una cuenta?{""}
+        <p className="Registrarse"> ¿No tiene una cuenta?{""}
         <Link to="/register" className="registrarse-link"> Regístrese</Link>
         </p>
 

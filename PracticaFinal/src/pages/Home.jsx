@@ -1,6 +1,7 @@
 import React from "react";
 
 import HomeContent from "../components/HomeContent";
+import Navbar from "../components/Navbar";
 import { useNavigate } from 'react-router-dom';
 
 function Home() {
@@ -14,8 +15,10 @@ function Home() {
 
     return (
         <div>
-        <HomeContent />
-        <button onClick={cerrarSesion}>Cerrar Sesión</button> 
+
+         {/* Pasamos la función cerrarSesion como prop al componente Navbar */}
+         <Navbar cerrarSesion={cerrarSesion}/> <br /><br />  
+         <HomeContent /> 
 
 
         </div>

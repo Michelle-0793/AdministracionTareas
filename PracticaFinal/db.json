@@ -20,5 +20,15 @@
     }
   ],
   "tareas": [
+    {
+      "id": "b33c",
+      "text": "Agendar reunión",
+      "fecha": "2024-09-10"
+    },
+    {
+      "id": "9020",
+      "text": "Diseñar flyer",
+      "fecha": "2024-10-01"
+    }
   ]
 }

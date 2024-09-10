@@ -24,11 +24,11 @@ function ListaTareas() {
   };
 
   const CambiarFecha = (event) => {
-    setFechaEditada (event.target.value);
+    setFechaTarea(event.target.value);
   };
 
   const CambiarFechaEditada = (event) => {
-    setFechaEditada (event.target.value);
+    setFechaEditada(event.target.value); // Cambia 'FechaEditada' cuando el input de edición se usa
   };
 
 //AÑADIR TAREA
@@ -37,7 +37,9 @@ function ListaTareas() {
       const nuevaTarea = {text: NuevaTarea, fecha: FechaTarea}; 
       const TareaCreada = await PostTareas(nuevaTarea); // Guardar la tarea 
       setTareas([...Tareas, TareaCreada]); //spread para agregar nueva tarea al final de la lista
-      setNuevaTarea(""); // Limpiar campo de entrada
+      setNuevaTarea(""); // Limpiar el campo de texto
+      setFechaTarea(""); // Limpiar el campo de fecha
+
     }
   };
 
@@ -49,14 +51,14 @@ function ListaTareas() {
     setFechaEditada(tarea.fecha);
   };
   
-//GUARDAR LO EDITADO
+  // GUARDAR LO EDITADO
   const GuardarEdicion = async (id) => {
-    const Editada = { id, text: TareaEditada, fecha: FechaEditada};
+    const Editada = { id, text: TareaEditada, fecha: FechaEditada };  // Guardar la tarea con el texto y la fecha editada
     await UpdateTareas(Editada);
     setTareas(Tareas.map(tarea => tarea.id === id ? Editada : tarea));
     setEditarTarea(""); // Salir del modo de edición
-    setTareaEditada(""); // Limpiar el texto editado
-    setFechaEditada(""); 
+    setTareaEditada("");
+    setFechaEditada("");
   };
 
   const EliminarTarea = (id) => {
@@ -81,9 +83,9 @@ function ListaTareas() {
 return (
 <div>
 
-  <h1>Lista de Tareas</h1>
-  <input type="text" value={NuevaTarea} onChange={CambiarValorInput} />
-  <input type="date" value = {FechaTarea} onChange={CambiarFecha} />
+  <h1 className='Gestion'>Gestión de Tareas</h1><br /><br />
+  <input className='InputTarea' type="text" value={NuevaTarea} onChange={CambiarValorInput} placeholder='Ingrese una tarea' />
+  <input className='InputFecha' type="date" value={FechaTarea} onChange={CambiarFecha} />
   <button onClick={AñadirTarea}>Agregar Tarea</button>
 
 {/*LISTA DE TAREAS*/}
@@ -91,18 +93,20 @@ return (
       {Tareas.map((tarea) => (
         <li key={tarea.id}> {/*se mapea y se crea el li para cada tarea*/}
           {EditaTarea === tarea.id ? ( //Ternario para ver si la tarea está o no en edición
-      <>
-      <input type="text" /*Input pata editar la tarea*/ 
-        value={TareaEditada}
-        onChange={CambiarTextoEditado}/>
-        
+     <>
+     {/* Inputs para editar la tarea y la fecha */}
+     <input type="text" value={TareaEditada} onChange={CambiarTextoEditado} 
+     />
+     <input type="date" value={FechaEditada} onChange={CambiarFechaEditada} 
+     />
         <button onClick={() => GuardarEdicion(tarea.id)}>Guardar</button>
       </>
     ) : ( //Para cerrrar el operador ternario
 
       <>
         {/* Si la tarea no está en modo edición, se va a mostrar el texto de la tarea */}
-        {tarea.text}
+        {/* Muestra el texto de la tarea y la fecha */}
+        {tarea.text} - <span>{tarea.fecha}</span>
          {/* Botón para editar la tarea */}
         <button onClick={() => EditarTarea(tarea)}>Editar</button>
           {/* Botón para eliminar la tarea */}
